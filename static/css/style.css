@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.slider-img{
+    height: 250px;
+    width: 75%;
+    padding: 10px;
+}
