@@ -177,10 +177,35 @@
         const passText = e;
         console.log(passText.length);
         const number = parseInt(passText[0])
-        if (!isNaN(number)){
+        if (!isNaN(number)) {
             console.log("is a number", number)
-            alert("Please don't start with number")
+            return alert("Please don't start with number")
         }
+        const isContainsUppercase = /^(?=.*[A-Z])/;
+        if (!isContainsUppercase.test(passText)) {
+            return alert("Password must have at least one Uppercase Character.")
+        }
+
+
+        const isContainsLowercase = /^(?=.*[a-z])/;
+        if (!isContainsLowercase.test(passText)) {
+            return alert("Password must have at least one Lowercase Character.")
+        }
+
+
+        const isContainsNumber = /^(?=.*[0-9])/;
+        if (!isContainsNumber.test(passText)) {
+            return alert("Password must contain at least one Digit.")
+        }
+
+
+        const isContainsSymbol =
+            /^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])/;
+        if (!isContainsSymbol.test(passText)) {
+            alert("Password must contain at least one Special Symbol.")
+        }
+
+
 
     }
 </script>
