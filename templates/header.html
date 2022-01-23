@@ -111,7 +111,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input onblur="passwordChecker(value)" type="password" name="password" class="form-control passworduser">
+                            <input onblur="passwordChecker(value)" type="password" name="password"
+                                   class="form-control passworduser">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -135,7 +136,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input onblur="passwordChecker(value)" type="password" name="password" class="form-control passworduser">
+                            <input onblur="passwordChecker(value)" type="password" name="password"
+                                   class="form-control passworduser">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -171,15 +173,14 @@
 </script>
 
 <script>
-    const passwordChecker = (e) =>{
+    const passwordChecker = (e) => {
         const passText = e;
         console.log(passText.length);
-        console.log(passText[0]);
-        try {
-            parseInt(passText[0])
+        const number = parseInt(passText[0])
+        if (!isNaN(number)){
+            console.log("is a number", number)
+            alert("Please don't start with number")
         }
-        catch (e){
-            console.log(e)
-        }
+
     }
 </script>
